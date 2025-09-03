@@ -9,10 +9,12 @@
         }
     </style>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <h1 style="color:#7d5a00">This is a Heading using HEX value</h1>
+    <div id="document">
+    <h1 style="color:#ffffff">This is a Heading using HEX value</h1>
 
     <p><i>The Body is styled using internal CSS, while the subheadings are defined using external CSS</i></p>
 
@@ -27,7 +29,111 @@
 
     <!--Hello World!-->
     <br><p>You can't see the comment above ☝️</p>
+    <p id="imgtext">The image below has a background image!<br><b>It also directs you to another link!</b></p>
+    <a href="https://rewqpoiu.github.io/Self-Learning/" alt="an image of w3school's tutor" target="_blank">
+        <img id="img1" src="im a link.jpg" title="I am a link" style="background-image: url('background.jpg');">
+    </a>
+    <a href="im a link.jpg"><p>"Hello, I am a link, click me!"</p></a>
 
-    <img src="im a link.jpg" title="I am a link">
+    <a href="https://rewqpoiu.github.io/clicker-game-2.0/"><h2>I'm also a link</h2></a>
+
+    <table>
+        <tr>
+            <th>Indonesia</th>
+            <th>English</th>
+            <th>Mandarin</th>
+        </tr>
+        <tr>
+            <td>Halo</td>
+            <td>Hello</td>
+            <td>你好</td>
+        </tr>
+        <tr>
+            <td>Nasi</td>
+            <td>Rice</td>
+            <td>米饭</td>
+        </tr>
+        <tr>
+            <td colspan="2">Uganda</td>
+            <td>乌干达</td>
+        </tr>
+    </table>
+    <br>
+    <h2>These are some list</h2>
+    <center><div class="list">
+    <table>
+        <tr style="text-align: center;">
+            <th>Ordered</th>
+            <th>Unordered</th>
+        </tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>Toyota</li>
+                    <li>Honda</li>
+                    <li>Suzuki</li>
+                </ol>
+            </td>
+            <td>
+                <ul style="list-style-type: square;">
+                    <li>Sharp</li>
+                    <li>Samsung</li>
+                    <li>Apple</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <h2>Block and Inline</h2>
+    <p style="background-color: pink;">This is a paragraph, which is a block element. And this is a <a href="https://google.com" style="background-color: chartreuse;">hyperlink</a> which is an inline element. It takes the necessary space only.</p>
+
+    <h2>Classes and ID</h2>
+    <a href="#img1">Jump to an image</a>
+    <br><br>
+    <button onclick="removeElement()">Remove image</button>
+    <br>
+    <p class="red-text">My class is "red-text"</p>
+    <p class="pink-background">My class is "pink-background"</p>
+    <p class="red-text pink-background">My class is "red-text" and "pink-background"</p>
+
+    <h2>Iframes</h2>
+    <table class="noborder" >
+    <tr class="noborder" >
+        <td class="noborder" ><iframe class="noborder" src="https://wayground.com" height="500px" width="100%"></iframe></td>
+        <td class="noborder" ><iframe class="noborder" src="https://kahoot.it" height="500px" width="100%">Hello</iframe></td>
+    </tr>
+    </table>
+    
+    <h2>HTML Forms</h2>
+    <form>
+        <p>Rate this HTML from 1-10: </p>
+        <input type="text" name="rate">
+        <input type="submit" name="submit" onclick="thankYou()">
+    </form>
+    <br>
+    <p id="empty"></p>
+    <br><br><br><br>
+    </div>
+
+    <script>
+        function removeElement() {
+            const imageElement = document.getElementById("img1");
+            imageElement.scrollIntoView();
+            imageElement.parentNode.removeChild(imageElement);
+            document.getElementById("imgtext").innerHTML = "THE IMAGE IS GONE!!!";
+            document.getElementById("imgtext").style.fontSize = "40px";
+            document.getElementById("imgtext").style.background = "red";
+        }
+        function thankYou() {
+            alert("Thank you for rating this HTML");
+            document.getElementById("document").innerHTML = "<br>Have a Great Day!";
+            document.getElementById("document").style.fontSize = "70px";
+        }
+    </script>
+
+
+
+
 </body>
 </html>
